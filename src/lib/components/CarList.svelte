@@ -25,7 +25,7 @@
                     <span class="color-field" style:background-color={car.color}></span>
                 </p>
                 <p>
-                    More about this cat on website
+                    More about this car on website
                     <a target="_blank" href={car.website}>{car.website}</a>
                 </p>
             </div>

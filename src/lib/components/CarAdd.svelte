@@ -22,6 +22,8 @@
         newCar.model = '';
         newCar.color = '';
         newCar.website = '';
+
+        fileNameElement.innerText = 'No file selected';
     }
 
     const handleFileFieldChange = () => {
