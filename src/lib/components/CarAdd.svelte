@@ -35,11 +35,9 @@
     {#if validatonErrors.length > 0 }
         <div class="errors">
             <p><b>Following validation errors occured:</b></p>
-            <ul>
-                {#each validatonErrors as err}
-                    <li>{err.error}</li>
-                {/each}
-            </ul>
+            {#each validatonErrors as err}
+                <p>{err.error}</p>
+            {/each}
         </div>
     {/if}
 

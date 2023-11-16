@@ -11,7 +11,7 @@
 
 
 .car-add .errors {
-    background-color: #a31d18;
+    background-color: var(--color-secondary);
     padding: 0.5rem;
     border-radius: 0.3rem;
 }
