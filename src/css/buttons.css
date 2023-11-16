@@ -1,0 +1,14 @@
+.button {
+    padding: 0.4rem 1rem;
+    color: var(--color-text-light);
+    background-color: var(--color-buttons);
+    border: none;
+    border-radius: 0.4rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.button:hover {
+    outline: 1px solid var(--color-text-light);
+}
