@@ -25,6 +25,9 @@
                     <span class="color-field" style:background-color={car.color}></span>
                 </p>
                 <p>
+                    Car power is {car.power} horsepower
+                </p>
+                <p>
                     More about this car on website
                     <a target="_blank" href={car.website}>{car.website}</a>
                 </p>
@@ -38,7 +41,7 @@
     {#if cars_list.length === 0}
         <div class="car-item">
             <p>
-                No items to display<br>
+                <b>No items to display</b><br><br>
                 When you insert new cars they will be displayed here<br>
                 Or you can just read 
                 <a target="_blank" href="https://www.npmjs.com/package/random-quotes">quotes</a>

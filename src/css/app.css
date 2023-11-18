@@ -1,3 +1,33 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  --color-header: #242424;
+  --color-primary: #1D1D1D;
+  --color-secondary: #121212;
+  --color-tertiary: #343434;
+  --color-quartenary: #3D3D3D;
+
+  --color-text-dark: #061a30;
+  --color-text-light: #FFFFFF;
+
+  --color-buttons: #121212;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: var(--color-text-light);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -30,8 +60,6 @@ main {
 
 .header img {
   height: 80%;
-  border-radius: 50%;
-  border: 3px solid var(--color-tertiary)
 }
 
 .header .quote {
@@ -44,32 +72,14 @@ main {
   gap: 1rem;
 }
 
-.app-car-list-container h2 {
-  margin-bottom: 1rem;
+.app-control-container {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0 1rem 1rem;
 }
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
-  --color-header: #0a2039;
-  --color-primary: #0A2647;
-  --color-secondary: #144272;
-  --color-tertiary: #205295;
-  --color-quartenary: #2C74B3;
-
-  --color-text-dark: #061a30;
-  --color-text-light: #5dabf0;
-
-  --color-buttons: #061a30;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.app-car-list-container h2 {
+  margin-bottom: 1rem;
 }

@@ -2,15 +2,17 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 20rem;
+    width: 100%;
     background-color: var(--color-primary);
     padding: 1rem;
+    border-radius: 0.4rem;
     gap: 1.5rem;
 }
 
-
-
 .car-add .errors {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
     background-color: var(--color-secondary);
     padding: 0.5rem;
     border-radius: 0.3rem;

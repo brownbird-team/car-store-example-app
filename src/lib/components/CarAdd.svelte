@@ -71,6 +71,15 @@
                 bind:value={newCar.color}
             />
         </div>
+        <div>
+            <label for="power">Power (KS)</label>
+            <input 
+                class="text-input"
+                type="text"
+                id="power" 
+                bind:value={newCar.power}
+            />
+        </div>
 
         <div class="file-upload-container">
             <label for="image" class="button file-btn">Upload car image</label>

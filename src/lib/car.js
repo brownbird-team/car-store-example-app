@@ -1,6 +1,8 @@
 import './imageValidator';
 import validate from 'validate.js';
 
+const carImageMaxDimensionPx = 300;
+
 export class BasicCarData {
     constructor() {
         this.emptyData();
@@ -11,6 +13,7 @@ export class BasicCarData {
             image: this.image,
             model: this.model,
             color: this.color,
+            power: this.power,
             website: this.website,
         };
     }
@@ -19,6 +22,7 @@ export class BasicCarData {
         this.image = '';
         this.model = '';
         this.color = '';
+        this.power = '';
         this.website = '';
     }
 }
@@ -31,7 +35,7 @@ export class Car extends BasicCarData {
 
         this.validationConstraints = {
             model: { 
-                presence: true, 
+                presence: true,
                 length: {
                     minimum: 1,
                     message: 'minimum length is 1',
@@ -51,6 +55,13 @@ export class Car extends BasicCarData {
                     pattern: /^https?:\/\/.*\..*$/,
                     message: 'must be a valid car website',
                 },
+            },
+            power: {
+                presence: true,
+                format: {
+                    pattern: /[0-9]+\.?[0-9]*/,
+                    message: 'must be a number',
+                }
             },
             fileInput: {
                 holdsImage: {
@@ -77,8 +88,33 @@ export class Car extends BasicCarData {
             const reader = new FileReader();
 
             reader.addEventListener('load', () => {
-                this.image = reader.result.toString();
-                resolve();
+                
+                const img = document.createElement('img');
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                img.onload = () => {
+
+                    const dim = {};
+
+                    if (img.height < img.width) {
+                        dim.width = carImageMaxDimensionPx;
+                        dim.height = Math.round(img.height * carImageMaxDimensionPx / img.width);
+                    } else {
+                        dim.height = carImageMaxDimensionPx;
+                        dim.width = Math.round(img.width * carImageMaxDimensionPx / img.height);
+                    }
+
+                    canvas.width = dim.width;
+                    canvas.height = dim.height;
+
+                    ctx.drawImage(img, 0, 0, dim.width, dim.height);
+                    this.image = canvas.toDataURL();
+
+                    resolve(this.image);
+                }
+
+                img.src = reader.result.toString();
             });
 
             reader.addEventListener('error', () => {
