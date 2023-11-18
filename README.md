@@ -1,6 +1,4 @@
-# Rainbow crabs fly high
+# Car store example app
 
-This is simple application used for demonstration in high school.
+This is simple application used for demonstration in high school. Application is written in JS using Svelte library.
 Made on request of professor Gomaz.
-
-TODO: Add error message when localstorage is full, or there is not enough space to save given image (because image is too large)
