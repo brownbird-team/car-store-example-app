@@ -72,7 +72,7 @@
             />
         </div>
         <div>
-            <label for="power">Power (KS)</label>
+            <label for="power">Power (HP)</label>
             <input 
                 class="text-input"
                 type="text"
